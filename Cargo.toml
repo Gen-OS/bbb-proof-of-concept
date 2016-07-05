@@ -20,10 +20,10 @@ crate-type = ["staticlib"]
 default = []
 
 # processors
-am335x = []
+cpu-am335x = []
 
 # boards
-beaglebone-black = ["am335x"]
+board-beaglebone-black = ["cpu-am335x"]
 
 [dependencies]
-rlibc = "1.0"
+rlibc = "~1.0.0"

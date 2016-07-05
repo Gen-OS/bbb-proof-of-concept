@@ -6,6 +6,9 @@ extern crate rlibc;
 pub use arch::*;
 mod arch;
 
+pub use cpu::*;
+mod cpu;
+
 // Actual code starts here.
 
 #[no_mangle]

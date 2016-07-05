@@ -1,6 +1,7 @@
 CHAIN = arm-none-eabi
 ARCH = thumbv7a
 TARGET = $(ARCH)-none-eabi
+BOARD = beaglebone-black
 
 AS = $(CHAIN)-gcc -x assembler-with-cpp
 ASFLAGS = -mcpu=cortex-a8 -mfloat-abi=hard -mfpu=neon
@@ -31,7 +32,7 @@ clean:
 	@rm -rf build
 
 rust:
-	xargo build --target $(TARGET)
+	xargo build --target $(TARGET) --features "board-$(BOARD)"
 
 $(output).elf: rust $(libstage1) $(assembly_object_files) $(linker_script)
 	$(LD) $(LDFLAGS) $(assembly_object_files) $(libstage1) -T $(linker_script) -o $(output).elf

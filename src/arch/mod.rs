@@ -3,6 +3,7 @@
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
+// Platform-specific stuff
 #[cfg(target_arch = "thumbv7a")]
 pub use self::thumbv7a::*;
 
