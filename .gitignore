@@ -34,3 +34,7 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Project specific
+tftpboot
+build/

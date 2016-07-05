@@ -1,9 +1,29 @@
 [package]
 name = "bbb-proof-of-concept"
 version = "0.1.0"
+license = "MIT"
 authors = [
     "Alexis Williams <sasinestro@gmail.com>"
 ]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+[lib]
+name = "stage1"
+crate-type = ["staticlib"]
+
+[features]
+default = []
+
+# processors
+am335x = []
+
+# boards
+beaglebone-black = ["am335x"]
 
 [dependencies]
 rlibc = "1.0"

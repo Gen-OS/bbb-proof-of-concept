@@ -16,12 +16,14 @@
 	.fnstart
 	.cantunwind
 .endm
+
 .macro .fn_end
 	.fnend
 .endm
 #else
 .macro .fn_start
 .endm
+
 .macro .fn_end
 .endm
 #endif
