@@ -13,3 +13,5 @@ SECTIONS
     .data : { *(.data*) } > ram
     .bss : { *(.bss*) } > ram
 }
+
+ENTRY(_start_from_ARM)
