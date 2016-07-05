@@ -17,3 +17,8 @@ extern fn panic_fmt() {
 
     }
 }
+
+#[lang = "eh_personality"]
+extern fn eh_personality() {
+
+}

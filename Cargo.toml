@@ -6,12 +6,6 @@ authors = [
     "Alexis Williams <sasinestro@gmail.com>"
 ]
 
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
-
 [lib]
 name = "stage1"
 crate-type = ["staticlib"]

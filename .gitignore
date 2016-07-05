@@ -37,4 +37,6 @@
 
 # Project specific
 tftpboot
+*.boot
 build/
+target/

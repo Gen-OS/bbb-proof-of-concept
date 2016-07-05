@@ -7,7 +7,7 @@ AS = $(CHAIN)-gcc -x assembler-with-cpp
 ASFLAGS = -mcpu=cortex-a8 -mfloat-abi=hard -mfpu=neon
 
 LD = $(CHAIN)-ld
-LDFLAGS = -nostdlib
+LDFLAGS = -nostdlib --gc-sections
 
 OBJCOPY = $(CHAIN)-objcopy
 
