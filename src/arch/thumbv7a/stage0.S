@@ -103,7 +103,7 @@
 .sfun init
     // Execution arrives here by bl/blx from reset vector, thereby handing 
     // us the location and thumbness of the exception vectors.
-    subs    r4, lr, 4       // lr-adjust and move it to a safe register
+    subs    r4, lr, 4       // Vector table base, bit 0 = thumbness
 
     cpsid   ia, MODE_THR    // thread mode, mask all async exceptions
 
