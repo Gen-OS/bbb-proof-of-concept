@@ -7,4 +7,4 @@ Note to me and anyone else who looks at this: Don't, pretty much.
 
 ## Special thanks:
 - \#beagle on Freenode, for various pearls of wisdom. 
-- Matthijs van Duin, for excellent advice and help getting off the ground with bare-metal execution on the BBB. `asm_common.h` and `initialize.S` wouldn't be there without him.
+- Matthijs van Duin, for excellent advice and help getting off the ground with bare-metal execution on the BBB. `arch/thumbv7a/asm_common.h` and `arch/thumbv7a/stage0.S` wouldn't be there without him.
