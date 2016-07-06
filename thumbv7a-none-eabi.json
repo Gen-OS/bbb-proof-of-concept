@@ -11,8 +11,9 @@
     "target-endian": "little",
     "target-pointer-width": "32",
     "no-compiler-rt": true,
+    "features": "+v7,+vfp3,+d16,+neon",
     "pre-link-args": [
-        "-mcpu=cortex-a8", "-mthumb", "-mfloat-abi=hard"
+        "-mcpu=cortex-a8", "-mthumb", "-mfloat-abi=hardfp"
     ],
     "post-link-args": [
         "-lm", "-lgcc", "-lnosys"

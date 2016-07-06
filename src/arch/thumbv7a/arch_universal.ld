@@ -1,0 +1,1 @@
+ENTRY(_start_from_ARM)

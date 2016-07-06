@@ -1,10 +1,12 @@
 CHAIN = arm-none-eabi
 ARCH = thumbv7a
+CPU = am335x
 TARGET = $(ARCH)-none-eabi
 BOARD = beaglebone-black
 
+# This is slow and bad, but faster than tracing the assembly by hand.
 AS = $(CHAIN)-gcc -x assembler-with-cpp
-ASFLAGS = -mcpu=cortex-a8 -mfloat-abi=hard -mfpu=neon
+ASFLAGS = -mcpu=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 
 LD = $(CHAIN)-ld
 LDFLAGS = -nostdlib --gc-sections
@@ -13,7 +15,7 @@ OBJCOPY = $(CHAIN)-objcopy
 
 output := blackjack
 libstage1 := target/$(TARGET)/debug/libstage1.a
-linker_script := src/arch/$(ARCH)/linker.ld
+linker_script := src/cpu/$(CPU)/linker.ld
 assembly_source_files := $(wildcard src/arch/$(ARCH)/*.S)
 assembly_object_files := $(patsubst src/arch/$(ARCH)/%.S, build/arch/$(ARCH)/%.o, $(assembly_source_files))
 
@@ -35,7 +37,7 @@ rust:
 	xargo build --target $(TARGET) --features "board-$(BOARD)"
 
 $(output).elf: rust $(libstage1) $(assembly_object_files) $(linker_script)
-	$(LD) $(LDFLAGS) $(assembly_object_files) $(libstage1) -T $(linker_script) -o $(output).elf
+	$(LD) $(LDFLAGS) $(assembly_object_files) $(libstage1) -L src/arch/$(ARCH) -T $(linker_script) -o $(output).elf
 
 $(output).boot: $(output).elf
 	$(OBJCOPY) -O binary $< $@
