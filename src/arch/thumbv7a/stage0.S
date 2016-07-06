@@ -12,7 +12,7 @@
 /// do nothing but jump over into (potentially) Thumb real entrypoint.
 .section .text.entrypoint, "ax", %progbits
 .armfun _start_from_ARM, global
-    ldr     pc, = _start
+    ldr     pc, = vectors
 .done
 .pool
 
