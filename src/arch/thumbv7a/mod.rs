@@ -4,6 +4,7 @@
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
 pub use self::stubs::*;
+pub use self::handlers::*;
 
-pub mod handlers;
+mod handlers;
 mod stubs;

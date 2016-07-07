@@ -1,8 +1,10 @@
-// src/cpu/am335x/mods.rs
+// src/cpu/am335x/interrupts.rs
 // Copyright 2016 Alexis Williams
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
-pub use self::interrupts::*;
+#[no_mangle]
+pub extern fn irq_dispatcher(_ : u8)
+{
 
-mod interrupts;
+}

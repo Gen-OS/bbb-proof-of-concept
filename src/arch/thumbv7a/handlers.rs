@@ -6,30 +6,22 @@
 /// # Exception handling
 /// 
 
-#[allow(private_no_mangle_fns, dead_code)]
 #[no_mangle]
 pub extern fn undef_dispatcher()
 {
 
 }
 
-#[allow(private_no_mangle_fns, dead_code)]
 #[no_mangle]
 pub extern fn iabort_dispatcher()
 {
 
 }
 
-#[allow(private_no_mangle_fns, dead_code)]
 #[no_mangle]
 pub extern fn dabort_dispatcher()
 {
 
 }
 
-#[allow(private_no_mangle_fns, dead_code)]
-#[no_mangle]
-pub extern fn irq_dispatcher()
-{
-
-}
+// There is no irq_dispatcher here because it is CPU specific.
