@@ -5,20 +5,18 @@
 
 #[allow(non_snake_case, private_no_mangle_fns)]
 #[no_mangle]
-pub extern fn _Unwind_Resume() {
+pub extern "C" fn _Unwind_Resume() {
     loop {
 
     }
 }
 
-#[lang = "panic_fmt"] 
-extern fn panic_fmt() {
+#[lang = "panic_fmt"]
+extern "C" fn panic_fmt() {
     loop {
 
     }
 }
 
 #[lang = "eh_personality"]
-extern fn eh_personality() {
-
-}
+extern "C" fn eh_personality() {}

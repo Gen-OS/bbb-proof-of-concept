@@ -4,7 +4,4 @@
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
 #[no_mangle]
-pub extern fn irq_dispatcher(_ : u8)
-{
-
-}
+pub extern "C" fn irq_dispatcher(_: u8) {}
