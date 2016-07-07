@@ -1,4 +1,4 @@
-// src/arch/thumbv7a/mods.rs
+// src/arch/thumbv7a/mod.rs
 // Copyright 2016 Alexis Williams
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
