@@ -1,3 +1,9 @@
+// src/stage1.rs
+// Copyright 2016 Alexis Williams
+//
+// Licensed under the MIT License <http://opensource.org/licenses/MIT>.
+//
+
 #![feature(lang_items)]
 #![allow(non_snake_case)]
 #![no_std]

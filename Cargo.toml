@@ -8,6 +8,7 @@ authors = [
 
 [lib]
 name = "stage1"
+path = "src/stage1.rs"
 crate-type = ["staticlib"]
 
 [features]
