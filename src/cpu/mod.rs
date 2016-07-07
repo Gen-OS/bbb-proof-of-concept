@@ -7,4 +7,6 @@
 #[cfg(all(target_arch = "thumbv7a", feature = "cpu-am335x"))]
 pub use self::am335x::*;
 
+
 pub mod am335x;
+pub mod generic;

@@ -3,6 +3,6 @@
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
-pub use self::interrupts::*;
+pub use self::drivers::irq::irq_dispatcher;
 
-mod interrupts;
+pub mod drivers;
