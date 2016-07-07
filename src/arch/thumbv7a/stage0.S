@@ -1,3 +1,8 @@
+// src/proc/thumbv7a/stage0.S
+// Copyright 2016 Alexis Williams
+//
+// Licensed under the MIT License <http://opensource.org/licenses/MIT>.
+
 #include "asm_common.h"
 
 /// ## Allocate the stack.

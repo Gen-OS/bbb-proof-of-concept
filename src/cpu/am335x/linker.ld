@@ -1,3 +1,9 @@
+/* src/cpu/am335x/linker.ld
+ * Copyright 2016 Alexis Williams
+ *
+ * Licensed under the MIT License <http://opensource.org/licenses/MIT>.
+ */
+
 INCLUDE arch_universal.ld
 
 MEMORY
@@ -22,10 +28,7 @@ SECTIONS
     .rodata (NOLOAD) : {
         *( .rodata .rodata* )
     } > internal_ram :image
-
-    __exidx_start = .;
-    __exidx_end = .;
-
+    
     .data (NOLOAD) : {
 		*( .data .data.* )
 	} > internal_ram :image

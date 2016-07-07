@@ -1,3 +1,9 @@
+// src/arch/thumbv7a/asm_common.h
+// Copyright 2016 Alexis Williams
+//
+// Licensed under the MIT License <http://opensource.org/licenses/MIT>.
+//
+
 #pragma once
 
 .altmacro
