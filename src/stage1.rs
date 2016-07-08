@@ -5,6 +5,7 @@
 //
 
 #![feature(lang_items)]
+#![feature(unwind_attributes)]
 #![allow(non_snake_case)]
 #![no_std]
 

@@ -3,19 +3,11 @@
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
-#[allow(non_snake_case, private_no_mangle_fns)]
-#[no_mangle]
-pub extern "C" fn _Unwind_Resume() {
-    loop {
-
-    }
-}
-
-#[lang = "panic_fmt"]
-extern "C" fn panic_fmt() {
-    loop {
-
-    }
+#[lang="panic_fmt"]
+#[allow(unused_variables)]
+#[unwind]
+extern "C" fn panic_fmt(args: ::core::fmt::Arguments, file: &'static str, line: u32) -> ! {
+    loop {}
 }
 
 #[lang = "eh_personality"]
