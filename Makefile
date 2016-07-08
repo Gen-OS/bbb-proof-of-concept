@@ -24,14 +24,14 @@ assembly_object_files := $(patsubst src/arch/$(ARCH)/%.S, build/arch/$(ARCH)/%.o
 all: $(output).bin
 
 clean:
-	@xargo clean
+	@cargo clean
 	@rm -f *.elf
 	@rm -f *.boot
 	@rm -f *.dump
 	@rm -rf build
 
 rust:
-	xargo build --target $(TARGET) --features "board-$(BOARD)"
+	cargo build --target $(TARGET) --features "board-$(BOARD)"
 
 $(output).elf: rust $(libstage1) $(assembly_object_files) $(linker_script)
 	$(LD) $(LDFLAGS) $(assembly_object_files) $(libstage1) -L src/arch/$(ARCH) -T $(linker_script) -o $(output).elf

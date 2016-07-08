@@ -10,19 +10,27 @@ I'll assume that you have Xcode Dev Tools and Homebrew already installed.
 ## Step 1: Get `arm-none-eabi-gcc`
 
 ### OS X
-`$ brew cask install gcc-arm-embedded`
+```
+$ brew cask install gcc-arm-embedded
+```
 
 ### Ubuntu
-`$ sudo apt-get install gcc-arm-none-eabi`
+```
+$ sudo apt-get install gcc-arm-none-eabi
+```
 
 ## Step 2: Get `rustup` and a native nightly `rustc`
-`curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly`
+```
+$ curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+```
 
 Also this randomly breaks sometimes, because of course it does. Blame CloudFlare for taking forever to actually listen to invalidation requests because reasons.
 
 Ensure that `~/.cargo/bin` is on your PATH before continuing.
 
-## Step 3: Install `xargo`
-`xargo` is a wrapper-ish thing around the Rust package manager that takes care of building `libcore` (the platform-independent parts of the Rust standard library) and setting up a sysroot sandbox to contain all of the stuff for the new architecture.
+## Step 3: Compile libcore for `thumbv7a-none-eabi`
+Download install-libcore.sh and execute it with the proper options, insuring that you are in the same folder as `thumbv7a-none-eabi.json`.
 
-`$ cargo install xargo`
+```
+$ curl https://raw.githubusercontent.com/phil-opp/nightly-libcore/master/install-libcore.sh | bash -s -- install-libcore.sh thumbv7a-none-eabi
+```
