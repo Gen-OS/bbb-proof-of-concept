@@ -5,7 +5,9 @@
 //
 
 #![feature(lang_items)]
+#![feature(plugin)]
 #![feature(unwind_attributes)]
+#![plugin(interpolate_idents)]
 #![allow(non_snake_case)]
 #![no_std]
 

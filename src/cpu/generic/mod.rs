@@ -3,3 +3,5 @@
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
+#[macro_use]
+pub mod register_map;

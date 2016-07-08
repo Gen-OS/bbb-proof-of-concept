@@ -22,3 +22,4 @@ board-beaglebone-black = ["cpu-am335x"]
 
 [dependencies]
 rlibc = "~1.0.0"
+interpolate_idents = "~0.1.0"

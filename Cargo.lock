@@ -2,8 +2,14 @@
 name = "bbb-proof-of-concept"
 version = "0.1.0"
 dependencies = [
+ "interpolate_idents 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rlibc 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "interpolate_idents"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "rlibc"
