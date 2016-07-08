@@ -36,7 +36,6 @@
 *.su
 
 # Project specific
-tftpboot
-*.boot
+*.bin
 build/
 target/

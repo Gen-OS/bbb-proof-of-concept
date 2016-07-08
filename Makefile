@@ -19,12 +19,9 @@ linker_script := src/cpu/$(CPU)/linker.ld
 assembly_source_files := $(wildcard src/arch/$(ARCH)/*.S)
 assembly_object_files := $(patsubst src/arch/$(ARCH)/%.S, build/arch/$(ARCH)/%.o, $(assembly_source_files))
 
-.PHONY: all copy clean run rust
+.PHONY: all clean run rust
 
-all: $(output).boot
-
-copy: $(output).boot
-	cp $(output).boot tftpboot/$(output).boot 
+all: $(output).bin
 
 clean:
 	@xargo clean
@@ -39,7 +36,7 @@ rust:
 $(output).elf: rust $(libstage1) $(assembly_object_files) $(linker_script)
 	$(LD) $(LDFLAGS) $(assembly_object_files) $(libstage1) -L src/arch/$(ARCH) -T $(linker_script) -o $(output).elf
 
-$(output).boot: $(output).elf
+$(output).bin: $(output).elf
 	$(OBJCOPY) -O binary $< $@
 
 # compile assembly files
