@@ -32,5 +32,6 @@ Ensure that `~/.cargo/bin` is on your PATH before continuing.
 Download install-libcore.sh and execute it with the proper options, insuring that you are in the same folder as `thumbv7a-none-eabi.json`.
 
 ```
-$ curl https://raw.githubusercontent.com/phil-opp/nightly-libcore/master/install-libcore.sh | bash -s -- install-libcore.sh thumbv7a-none-eabi
+$ curl -O https://raw.githubusercontent.com/phil-opp/nightly-libcore/master/install-libcore.sh
+$ bash install-libcore.sh thumbv7a-none-eabi
 ```
