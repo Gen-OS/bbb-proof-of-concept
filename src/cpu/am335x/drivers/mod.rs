@@ -3,4 +3,6 @@
 //
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 
+pub mod clock;
+pub mod gpio;
 pub mod irq;

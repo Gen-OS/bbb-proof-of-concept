@@ -4,6 +4,8 @@
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 #![allow(dead_code)]
 
+use cpu::generic::register_map;
+
 // AM335x TRM 2.1, 6.5:
 register_map! { 
     INTC => from 0x48200000, u32:
@@ -50,9 +52,7 @@ fn get_current_irq() -> usize {
     // AM335x TRM 6.5.1:
     let ActiveIRQ = 0x7F;
 
-    unsafe {
-        return (*INTC.SIR_IRQ & ActiveIRQ) as usize;
-    }
+    (INTC.SIR_IRQ.get() & ActiveIRQ) as usize
 }
 
 fn default_handler() {

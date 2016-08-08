@@ -4,6 +4,7 @@
 // Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 //
 
+#![feature(core_intrinsics)]
 #![feature(lang_items)]
 #![feature(plugin)]
 #![feature(unwind_attributes)]
@@ -23,9 +24,7 @@ mod cpu;
 
 #[no_mangle]
 pub extern "C" fn main(_: i32, _: *const *const u8) -> i32 {
-    let CM_PER_BASE = 0x44e00000 as *mut u32;
-    let CM_PER_GPIO1 = unsafe { CM_PER_BASE.offset(0xAC) };
-    unsafe { *CM_PER_GPIO1 = 1 << 18 | 2 };
+    cpu::am335x::drivers::gpio::enable(cpu::am335x::drivers::gpio::GPIO::GPIO1);
 
     let GPIO1_BASE = 0x4804C000 as *mut u32;
     let GPIO1_OE = unsafe { GPIO1_BASE.offset(0x134) };
