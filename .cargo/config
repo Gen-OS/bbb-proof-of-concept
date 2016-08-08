@@ -1,0 +1,7 @@
+[build]
+target="thumbv7a-none-eabi"
+
+[target]
+ar="arm-none-eabi-ar"
+cc="arm-none-eabi-gcc"
+linker="arm-none-eabi-gcc"

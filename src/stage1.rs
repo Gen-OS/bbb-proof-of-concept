@@ -6,13 +6,13 @@
 
 #![feature(core_intrinsics)]
 #![feature(lang_items)]
+#![feature(link_args)]
 #![feature(plugin)]
+#![feature(start)]
 #![feature(unwind_attributes)]
 #![plugin(interpolate_idents)]
 #![allow(non_snake_case)]
 #![no_std]
-
-extern crate rlibc;
 
 pub use arch::*;
 mod arch;
@@ -20,10 +20,13 @@ mod arch;
 pub use cpu::*;
 mod cpu;
 
+#[link_args = "-T linker.ld"]
+extern "C" {}
+
 // Actual code starts here.
 
-#[no_mangle]
-pub extern "C" fn main(_: i32, _: *const *const u8) -> i32 {
+#[start]
+pub fn main(_: isize, _: *const *const u8) -> isize {
     cpu::am335x::drivers::gpio::enable(cpu::am335x::drivers::gpio::GPIO::GPIO1);
 
     let GPIO1_BASE = 0x4804C000 as *mut u32;

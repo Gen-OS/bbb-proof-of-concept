@@ -5,11 +5,12 @@ license = "MIT"
 authors = [
     "Alexis Williams <sasinestro@gmail.com>"
 ]
+build = "build.rs"
+links = "stage0"
 
-[lib]
+[[bin]]
 name = "stage1"
-path = "src/stage1.rs"
-crate-type = ["staticlib"]
+path = "src/stage1.rs"  
 
 [features]
 default = []
@@ -21,5 +22,10 @@ cpu-am335x = []
 board-beaglebone-black = ["cpu-am335x"]
 
 [dependencies]
-rlibc = "~1.0.0"
 interpolate_idents = "~0.1.2"
+
+[dependencies.compiler-rt]
+git = "https://github.com/Gen-OS/compiler-rt.rs"
+
+[build-dependencies]
+gcc = "0.3"
