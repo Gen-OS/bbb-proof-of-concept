@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ELF_FILE=$(find target -iname 'stage1' -print -quit | head -n1) 
+arm-none-eabi-objcopy -I elf -O binary $ELF_FILE bootloader.bin 
