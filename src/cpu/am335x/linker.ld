@@ -8,7 +8,7 @@ INCLUDE arch_universal.ld
 
 MEMORY
 {
-    internal_ram : ORIGIN = 0x402f0000, LENGTH = 0x9600
+    internal_ram : ORIGIN = 0x402f0400, LENGTH = 0x9600
     memory_cont  : ORIGIN = 0x40300000, LENGTH = 0x10000
 }
 
@@ -22,6 +22,11 @@ SECTIONS
     . = 0x402f0400;
 
     .text . : { 
+        *( 
+            .text.entrypoint
+            .text._start
+            .text.vectors 
+        )
         *( .text .text* )
     } > internal_ram :image
 
